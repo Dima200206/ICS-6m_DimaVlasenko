@@ -20,16 +20,20 @@ def create_zajavka():
     zajavka_list: список заявок
     """
 def get_client_name(client_code):
-    """знаходить
+    """знаходить назву клыента по коду
     
     Args:
-       client_code ([Type]): [description]
+       client_code ([Type]): код клыента
        
        Returns:
-       [type]: [description]
+       [type]: назва клыента
        """
+      
+   #    for client in clients:
+   #        if client_code = client[0]:
+   #            return client[1]
 
-    return client_name
+   #     return "*** назва не знайдена"
 
 
 
@@ -51,6 +55,7 @@ for order in orders:
     zajavka_work['kol'] = order[3]
     zajavka_work['price'] = order[4]
     zajavka_work['total'] = zajavka_work['kol'] * zajavka_work['price']
+    zajavka_work['client'] = get_client_name(order[0])
 
     zajavka_list.append(zajavka_work)
 
