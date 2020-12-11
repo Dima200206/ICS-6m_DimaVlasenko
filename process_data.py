@@ -1,25 +1,32 @@
 """ розрахунок заявок на товари по магазину"""
 
-from data_service import get_clients, get_orders
+from data_service import get_tovars, get_orderstovs
 
 
 # словник в якому будуть накоплюватись результати розрахунків
-zajavka = {
-'oborud' : "", # назва устаткування
-'client' : "", #назва кліента
-'zakaz' : "", #номер заказа
-'kol' : 0, #кількість товару
-'price' : 0.0, #ціна
-'total' : 0.0  #сума
+analiz = {
+'namerunok' : "", # назва устаткування!!! rewrite !!!!
+'nametovar' : "", #назва кліента
+'kol' : "", #номер заказа
+'price2007' : 0, #кількість товару
+'price2008' : 0.0, #ціна
+'procent2008' : 0.0  #сума
+'price2011' : 0.0  #сума
+'procent2011' : 0.0  #сума
+'price2017' : 0.0  #сума
+'procent2017' : 0.0  #сума
 }
 
-def create_zajavka():
+tovars = get_tovars()
+orderstovs = get_orderstovs()
+
+def create_analiz():
     """формування списку заявок по магазину
     
     Returns:
     zajavka_list: список заявок
     """
-def get_client_name(client_code):
+def get_tovar_name(tovar_code):
     """знаходить назву клыента по коду
     
     Args:
@@ -29,9 +36,9 @@ def get_client_name(client_code):
        [type]: назва клыента
        """
       
-   #    for client in clients:
-   #        if client_code = client[0]:
-   #            return client[1]
+           for tovar in tovars:
+            if tovar_code = tovar[0]:
+               return tovar[1]
 
    #     return "*** назва не знайдена"
 
@@ -39,31 +46,34 @@ def get_client_name(client_code):
 
 
 # накопичувач заявок
-zajavka_list = []
-
-orders = get_orders()
-client = get_clients()
+analiz_list = []
 
 
-for order in orders:
 
 
-    zajavka_work = zajavka.copy()
+for orderstov in orderstovs:
 
-    zajavka_work['oborud'] = order[2]
-    zajavka_work['zakaz'] = order[1]
-    zajavka_work['kol'] = order[3]
-    zajavka_work['price'] = order[4]
-    zajavka_work['total'] = zajavka_work['kol'] * zajavka_work['price']
-    zajavka_work['client'] = get_client_name(order[0])
 
-    zajavka_list.append(zajavka_work)
+    analiz_work = analiz.copy()
 
-return zajavka_list
+    analiz_work['namerunok'] = order[2]
+    analiz_work['nametovar'] = order[1]
+    analiz_work['kol'] = order[3]
+    analiz_work['price2007'] = price[7]
+    analiz_work['price2008'] = price[8] #zajavka_work['kol'] * zajavka_work['price']
+    analiz_work['procent2008'] = order[4]
+    analiz_work['price2011'] = price[11]
+    analiz_work['procent2011'] = order[4]
+    analiz_work['price2017'] = price[17]
+    analiz_work['procent2017'] = get_client_name(order[0])
 
-zajavkas = create_zajavka()
+    analiz_list.append(analiz_work)
 
-for item in zajavkas:
+return analiz_list
+
+analizs = create_analiz()
+
+for item in analizs:
     print(item)
 
 
