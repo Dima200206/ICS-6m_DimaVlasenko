@@ -67,19 +67,18 @@ def write_analiz(analiz_list):
     """
     with open('.\data\analiz.txt', "w") as analiz_file:
         for analiz in analiz_list:
-                   line = \
-                   analiz['namerunok'] + ';' +         \
+                   line = analiz['namerunok'] + ';' +         \
                    analiz['nametovar'] + ';' +         \
-                   analiz['kilogram'] + ';' +          \ 
+                   analiz['kilogram'] + ';' +          \
                    str(analiz['price2007']) + ';' +    \
                    str(analiz['price2008']) + ';' +    \
                    str(analiz['procent2008']) + ';' +  \
                    str(analiz['price2011']) + ';' +    \
-                   str(analiz['procent2011']) + ';' +  \    
+                   str(analiz['procent2011']) + ';' +  \
                    str(analiz['price2017']) + ';' +    \
                    str(analiz['procent2017']) + '\n' 
-            
-            analiz_file.write(line)
+                   
+                   analiz_file.write(line)
 
 print("Файл успішно сформовано ...")
 
