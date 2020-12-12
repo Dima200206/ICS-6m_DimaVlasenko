@@ -34,7 +34,7 @@ def get_tovar():
 
     for tovar in tovars:
         if  tovar_code_from <= tovar[0] <= tovar_code_to: 
-            print("код: {:4} назва: {:17} адреса: {:20}".format(client[0], client[1], client[2]))
+            print("код: {:4} назва: {:17} адреса: {:20}".format(client[0], client[1], client[2]))!!!!
 
 
 

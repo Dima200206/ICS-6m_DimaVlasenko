@@ -2,11 +2,13 @@
 """Головне меню"""
 
 import os
-from process_data import create_zajavka
-from data_service import show_orders, show_clients, get_orders, get_clients
+from process_data import create_analiz
+from data_service import show_tovar, show_tovars, get_tovars, get_tovar
+
  
  
- MAIN_MENU = """
+ MAIN_MENU = \
+     """
 
 ~~~~~~ Аналіз зміни рівня цін на продовольчі товари ~~~~~~~~~~~
 
@@ -20,7 +22,7 @@ ________________________
 
 TITEL = "Аналіз зміни рівня цін на продовольчі товари"
 
-HEADER = 
+HEADER = \
     """
     ======================================================================================================
     Найменування ринку | Найменування товара | Одиниця виміру | Зміна рівня цін по рокам                 |
@@ -90,23 +92,23 @@ while True:
         exit()
 
 
-    elif comand_number = '1':
+    elif comand_number == '1':
         analiz_list = create_analiz()
         show_analiz_table()
         input(STOP_MESSAGE)
 
-    elif comand_number = '2':
+    elif comand_number == '2':
             analiz_list = create_analiz()
             write_analiz(analiz_list)
             input(STOP_MESSAGE)
 
-    elif comand_number = '3':
+    elif comand_number == '3':
         orderstov = get_orderstov()
         show_orderstov(orderstov)
         input(STOP_MESSAGE)
 
 
-    elif comand_number = '4':
+    elif comand_number == '4':
         tovar = get_tovar()
         show_tovar(tovar)
         input(STOP_MESSAGE)
