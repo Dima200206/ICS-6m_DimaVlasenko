@@ -17,8 +17,7 @@ analiz = {
 'procent2017' : 0.0   #відсоток 2017
 }
 
-midlprices = get_midlprices()
-orderstovs = get_orderstovs()
+
 
 def create_analiz():
     """формування списку заявок по магазину
@@ -37,37 +36,41 @@ def get_orderstov_name(orderstov_code):
        """
       
     for orderstov in orderstovs:
-        if orderstov_code == orderstov[2]:
+        if orderstov_code == orderstov[1]:
             return orderstov[0]
 
     return "назва не знайдена"
 
+#def get_midlprices
 
 
 # накопичувач заявок
     analiz_list = []
+
+    midlprices = get_midlprices()
+    orderstovs = get_orderstovs()
 
     for midlprice in midlprices:
 
 
         analiz_work = analiz.copy()
 
-        analiz_work['namerunok'] = zina[5]
-        analiz_work['nametovar'] = get_orderstov_name(zina[1])
-        analiz_work['kilogram'] = get_orderstov_name(zina[2])
-        analiz_work['price2007'] = zina[1]
-        analiz_work['price2008'] = zina[2]
-        analiz_work['procent2008'] = prozent[1]
-        analiz_work['price2011'] = zina[3]
-        analiz_work['procent2011'] =  prozent[2]
-        analiz_work['price2017'] = zina[4]
-        analiz_work['procent2017'] =  prozent[3]
+        analiz_work['namerunok'] = midlprice[5]
+        analiz_work['nametovar'] = get_orderstov_name(midlprice[1])
+        analiz_work['kilogram'] = get_orderstov_name(midlprice[2])
+        analiz_work['price2007'] = midlprice[1]
+        analiz_work['price2008'] = midlprice[2]
+        analiz_work['procent2008'] = float(analiz_work['price2007']) / float(analiz_work['price2008'])* 100
+        analiz_work['price2011'] = midlprice[3]
+        analiz_work['procent2011'] =  float(analiz_work['price2008']) / float(analiz_work['price2011'])* 100
+        analiz_work['price2017'] = midlprice[4]
+        analiz_work['procent2017'] =  float(analiz_work['price2011']) / float(analiz_work['price2017'])* 100
 
         analiz_list.append(analiz_work)
 
     return analiz_list
 
-analizs = create_analiz()
+#analizs = create_analiz()
 
    # for item in analizs:
     #    print(item)

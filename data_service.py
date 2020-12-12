@@ -31,7 +31,7 @@ def get_orderstovs():
 
     for line in from_file:
 #відрізки '\n' в кінці рядка
-        line = line[:-2]
+        line = line[:-1]
 
         line_list = line.split(';')
         orderstovs_list.append(line_list)

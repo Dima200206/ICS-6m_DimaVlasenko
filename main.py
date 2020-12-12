@@ -51,13 +51,13 @@ def show_analiz_table(analiz_list):
         print(f"{analiz['namerunok']:20}",
               f"{analiz['nametovar']:20}",
               f"{analiz['kilogram']}",
-              f"{analiz['price2007']:>14}", # число вирівнюється по середині
-              f"{analiz['price2008']:>15.2f}", # число флов дріб 
-              f"{analiz['procent2008']:>15.2f}",
-              f"{analiz['price2011']:>15.2f}",
-              f"{analiz['procent2011']:>15.2f}",
-              f"{analiz['price2017']:>15.2f}",
-              f"{analiz['procent2017']:>15.2f}",
+              f"{float(analiz['price2007']):>14}", # число вирівнюється по середині
+              f"{float(analiz['price2008']):>15.2f}", # число флов дріб 
+              f"{float(analiz['procent2008']):>15.2f}",
+              f"{float(analiz['price2011']):>15.2f}",
+              f"{float(analiz['procent2011']):>15.2f}",
+              f"{float(analiz['price2017']):>15.2f}",
+              f"{float(analiz['procent2017']):>15.2f}",
     )              
     #"""do formating for correct printing 'f-string' """
 
