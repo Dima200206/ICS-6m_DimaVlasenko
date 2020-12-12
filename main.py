@@ -2,6 +2,7 @@
 """Головне меню"""
 
 import os
+import process_data, data_service
 from process_data import create_analiz
 from data_service import show_midlprices, show_orderstovs, get_midlprices, get_orderstovs
 
@@ -46,17 +47,17 @@ def show_analiz_table(analiz_list):
     print(f"\n\n{TITEL:^92}")
     print(HEADER)
 
-for analiz in analiz_list:
-    print(f"{analiz[namerunok]:20}",
-    f"{analiz['nametovar']:20}",
-    f"{analiz['kg']}",
-    f"{analiz['price2007']:>14}", # число вирівнюється по середині
-    f"{analiz['price2008']:>15.2f}", # число флов дріб 
-    f"{analiz['procent2008']:>15.2f}",
-    f"{analiz['price2011']:>15.2f}",
-    f"{analiz['procent2011']:>15.2f}",
-    f"{analiz['price2017']:>15.2f}",
-    f"{analiz['procent2017']:>15.2f}",
+    for analiz in analiz_list:
+        print(f"{analiz['namerunok']:20}",
+              f"{analiz['nametovar']:20}",
+              f"{analiz['kg']}",
+              f"{analiz['price2007']:>14}", # число вирівнюється по середині
+              f"{analiz['price2008']:>15.2f}", # число флов дріб 
+              f"{analiz['procent2008']:>15.2f}",
+              f"{analiz['price2011']:>15.2f}",
+              f"{analiz['procent2011']:>15.2f}",
+              f"{analiz['price2017']:>15.2f}",
+              f"{analiz['procent2017']:>15.2f}",
     )              
     #"""do formating for correct printing 'f-string' """
 
@@ -65,7 +66,7 @@ print(FOOTER)
 def write_analiz(analiz_list):
     """ запис заявок в файл 
     """
-    with open('.\data\analiz.txt', "w") as analiz_file:
+    with open('.\data\analiz.txt',encoding="utf8", "w") as analiz_file:
         for analiz in analiz_list:
                    line = analiz['namerunok'] + ';' +         \
                    analiz['nametovar'] + ';' +         \
@@ -105,8 +106,8 @@ while True:
             input(STOP_MESSAGE)
 
     elif comand_number == '3':
-        orderstov = get_orderstov()
-        show_orderstov(orderstov)
+        orderstov = get_orderstovs()
+        show_orderstovs(orderstovs)
         input(STOP_MESSAGE)
 
 
