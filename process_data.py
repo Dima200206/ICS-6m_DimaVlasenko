@@ -26,7 +26,7 @@ def create_analiz():
     Returns:
     zajavka_list: список заявок
     """
-def get_tovar_name(tovar_code):
+def get_orderstov_name(orderstov_code):
     """знаходить назву клыента по коду
     
     Args:
@@ -37,8 +37,8 @@ def get_tovar_name(tovar_code):
        """
       
     for orderstov in orderstovs:
-        if orderstov[0] == orderstov_code:
-            return orderstov[1]
+        if orderstov_code == orderstov[2]:
+            return orderstov[0]
 
     return "назва не знайдена"
 

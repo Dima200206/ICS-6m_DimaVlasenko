@@ -66,7 +66,7 @@ print(FOOTER)
 def write_analiz(analiz_list):
     """ запис заявок в файл 
     """
-    with open('.\data\analiz.txt', "w") as analiz_file:
+    with open('.\data\analiztab.txt', "w") as analiz_file:
         for analiz in analiz_list:
                    line = analiz['namerunok'] + ';' +         \
                    analiz['nametovar'] + ';' +         \
@@ -97,7 +97,7 @@ while True:
 
     elif comand_number == '1':
         analiz_list = create_analiz()
-        show_analiz_table()
+        show_analiz_table(analiz_list)
         input(STOP_MESSAGE)
 
     elif comand_number == '2':
@@ -107,13 +107,13 @@ while True:
 
     elif comand_number == '3':
         orderstov = get_orderstovs()
-        show_orderstovs(orderstovs)
+        show_orderstovs(orderstov)
         input(STOP_MESSAGE)
 
 
     elif comand_number == '4':
-        midlprice = get_midlprice()
-        show_midlprice(midlprice)
+        midlprice = get_midlprices()
+        show_midlprices(midlprice)
         input(STOP_MESSAGE)
 
 
