@@ -51,13 +51,13 @@ def show_analiz_table(analiz_list):
         print(f"{analiz['namerunok']:20}",
               f"{analiz['nametovar']:20}",
               f"{analiz['kilogram']}",
-              f"{float(analiz['price2007']):>14}", # число вирівнюється по середині
-              f"{float(analiz['price2008']):>15.2f}", # число флов дріб 
-              f"{float(analiz['procent2008']):>15.2f}",
-              f"{float(analiz['price2011']):>15.2f}",
-              f"{float(analiz['procent2011']):>15.2f}",
-              f"{float(analiz['price2017']):>15.2f}",
-              f"{float(analiz['procent2017']):>15.2f}",
+              f"{analiz['price2007']:>14}", # число вирівнюється по середині
+              f"{analiz['price2008']:>15.2f}", # число флов дріб 
+              f"{analiz['procent2008']:>15.2f}",
+              f"{analiz['price2011']:>15.2f}",
+              f"{analiz['procent2011']:>15.2f}",
+              f"{analiz['price2017']:>15.2f}",
+              f"{analiz['procent2017']:>15.2f}",
     )              
     #"""do formating for correct printing 'f-string' """
 
@@ -66,7 +66,7 @@ print(FOOTER)
 def write_analiz(analiz_list):
     """ запис заявок в файл 
     """
-    with open('.\data\analiztab.txt', "w") as analiz_file:
+    with open(r'.\data\analiztab.txt', "w") as analiz_file:
         for analiz in analiz_list:
             line = analiz['namerunok'] + ';' +         \
                    analiz['nametovar'] + ';' +         \
@@ -79,7 +79,7 @@ def write_analiz(analiz_list):
                    str(analiz['price2017']) + ';' +    \
                    str(analiz['procent2017']) + '\n' 
                    
-                   analiz_file.write(line)
+        analiz_file.write(line)
 
 print("Файл успішно сформовано ...")
 
