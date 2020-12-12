@@ -3,7 +3,7 @@
 
 import os
 from process_data import create_analiz
-from data_service import show_tovar, show_tovars, get_tovars, get_tovar
+from data_service import show_midlprices, show_orderstovs, get_midlprices, get_orderstovs
 
  
  
@@ -49,7 +49,7 @@ def show_analiz_table(analiz_list):
 for analiz in analiz_list:
     print(f"{analiz[namerunok]:20}",
     f"{analiz['nametovar']:20}",
-    f"{analiz['kol']}",
+    f"{analiz['kg']}",
     f"{analiz['price2007']:>14}", # число вирівнюється по середині
     f"{analiz['price2008']:>15.2f}", # число флов дріб 
     f"{analiz['procent2008']:>15.2f}",
@@ -69,7 +69,7 @@ def write_analiz(analiz_list):
         for analiz in analiz_list:
                    line = analiz['namerunok'] + ';' +      \
                    analiz['nametovar'] + ';' +      \
-                   analiz['kol'] + ';' +    \ 
+                   analiz['kg'] + ';' +    \ 
                    str(analiz['price2007']) + ';' +    \
                    str(analiz['price2008']) + ';' +  \
                    str(analiz['procent2008']) + ';' +  \
@@ -111,8 +111,8 @@ while True:
 
 
     elif comand_number == '4':
-        tovar = get_tovar()
-        show_tovar(tovar)
+        midlprice = get_midlprice()
+        show_midlprice(midlprice)
         input(STOP_MESSAGE)
 
 
