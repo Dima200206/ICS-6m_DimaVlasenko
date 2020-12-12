@@ -1,45 +1,45 @@
 """Модуль для роботи з файлами первинних данних - зчитування та вивід на єкран """
 
-def get_midlprice():
+def get_midlprices():
     """ повертає список кліентів який отримує з файлом 'client.txt'
 
     Returns:
     client_list: список кліентів """
 
-    with open(".\data\midlprice.txt") as midlprice_file:
-        from_file = midlprice_file.readlines()
+    with open(".\data\midlprice.txt",encoding="utf8") as midlprices_file:
+        from_file = midlprices_file.readlines()
 
 # накопичувачь кліетнів
-        midlprice_list = [] 
+        midlprices_list = [] 
 
     for line in from_file:
 #відрізки '\n' в кінці рядка
         line = line[:-2]
 
         line_list = line.split(';')
-        midlprice_list.append(line_list)
+        midlprices_list.append(line_list)
 
-    return midlprice_list
+    return midlprices_list
 
-def get_orderstov():  
+def get_orderstovs():  
     
     
-    with open(".\data\dovidnik.txt") as orderstov_file:
-        from_file = orderstov_file.readlines()
+    with open(".\data\dovidnik.txt",encoding="utf8") as orderstovs_file:
+        from_file = orderstovs_file.readlines()
 
 # накопичувачь кліетнів
-        orderstov_list = [] 
+        orderstovs_list = [] 
 
     for line in from_file:
 #відрізки '\n' в кінці рядка
         line = line[:-2]
 
         line_list = line.split(';')
-        orderstov_list.append(line_list)
+        orderstovs_list.append(line_list)
 
-    return orderstov_list  
+    return orderstovs_list  
 
-def show_midlprice(midlprice):
+def show_midlprices(midlprices):
                 
     #"""Виводить на екран список клієнтів заданого діапазона"""
 
@@ -54,7 +54,7 @@ def show_midlprice(midlprice):
 
     for midlprice in midlprices:
         if  midlprice_code_from <= midlprice[0] <= midlprice_code_to: 
-            print("код: {:4} ціна2007: {:17} ціна2008: {:17} ціна2011: {:17} ціна2017: {:17} наймринок: {:20}".format(midlprice[0], midlprice[1], midlprice[2], midlprice[3], midlprice[4], midlprice[5]))
+            print("код: {:4} ціна2007: {:5} ціна2008: {:7} ціна2011: {:7} ціна2017: {:7} наймринок: {:7}".format(midlprice[0], midlprice[1], midlprice[2], midlprice[3], midlprice[4], midlprice[5]))
             kol_lines += 1
 
         if kol_lines == 0:
@@ -71,7 +71,7 @@ def show_orderstovs(orderstovs):
 
     for orderstov in orderstovs:
         if  orderstov_code_from <= orderstov[0] <= orderstov_code_to: 
-            print("код: {:4} назва: {:17} одиниця: {:17}".format(orderstov[0], orderstov[1], orderstov[2]))
+            print("код: {:4} назва: {:6} одиниця: {:6}".format(orderstov[0], orderstov[1], orderstov[2]))
             kol_lines += 1
 
         if kol_lines == 0:

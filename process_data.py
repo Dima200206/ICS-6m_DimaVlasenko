@@ -7,7 +7,7 @@ from data_service import get_midlprices, get_orderstovs
 analiz = {
 'namerunok' : "",     # назва ринку
 'nametovar' : "",     #назва товару
-'kg' : "",            #одиниця
+'kilogram' : "",      #одиниця
 'price2007' : 0.0,    #ціна 2007
 'price2008' : 0.0,    #ціна 2008
 'procent2008' : 0.0,  #відсоток 2008
@@ -37,7 +37,7 @@ def get_tovar_name(tovar_code):
        """
       
     for orderstov in orderstovs:
-        if orderstov_code = orderstov[0]:
+        if orderstov[0] == orderstov_code:
             return orderstov[1]
 
     return "назва не знайдена"
@@ -45,7 +45,7 @@ def get_tovar_name(tovar_code):
 
 
 # накопичувач заявок
-analiz_list = []
+    analiz_list = []
 
     for midlprice in midlprices:
 
@@ -54,7 +54,7 @@ analiz_list = []
 
         analiz_work['namerunok'] = zina[5]
         analiz_work['nametovar'] = get_orderstov_name(zina[1])
-        analiz_work['kg'] = get_orderstov_name(zina[2])
+        analiz_work['kilogram'] = get_orderstov_name(zina[2])
         analiz_work['price2007'] = zina[1]
         analiz_work['price2008'] = zina[2]
         analiz_work['procent2008'] = prozent[1]
@@ -69,8 +69,8 @@ analiz_list = []
 
 analizs = create_analiz()
 
-    for item in analizs:
-        print(item)
+   # for item in analizs:
+    #    print(item)
 
 
 
