@@ -7,7 +7,7 @@ from data_service import show_tovar, show_tovars, get_tovars, get_tovar
 
  
  
- MAIN_MENU = \
+MAIN_MENU = \
      """
 
 ~~~~~~ Аналіз зміни рівня цін на продовольчі товари ~~~~~~~~~~~
@@ -39,11 +39,12 @@ FOOTER = \
 
 STOP_MESSAGE = "Для продовження натисніть клавішу Enter"
 
-def show_analiz_table(analiz_list)
-"""вивід на екран таблиці заявок
-"""
-print(f"\n\n{TITEL:^92}")
-print(HEADER)
+def show_analiz_table(analiz_list):
+
+# """Вивід на екран таблиці заявок"""
+
+    print(f"\n\n{TITEL:^92}")
+    print(HEADER)
 
 for analiz in analiz_list:
     print(f"{analiz[namerunok]:20}",
@@ -56,7 +57,8 @@ for analiz in analiz_list:
     f"{analiz['procent2011']:>15.2f}",
     f"{analiz['price2017']:>15.2f}",
     f"{analiz['procent2017']:>15.2f}",
-    )              """do formating for correct printing 'f-string' """
+    )              
+    #"""do formating for correct printing 'f-string' """
 
 print(FOOTER)
 
@@ -65,9 +67,9 @@ def write_analiz(analiz_list):
     """
     with open('.\data\analiz.txt', "w") as analiz_file:
         for analiz in analiz_list:
-            line = analiz['namerunok'] + ';' +      \
+                   line = analiz['namerunok'] + ';' +      \
                    analiz['nametovar'] + ';' +      \
-                   analiz['kol'] + ';' +       \ 
+                   analiz['kol'] + ';' +    \ 
                    str(analiz['price2007']) + ';' +    \
                    str(analiz['price2008']) + ';' +  \
                    str(analiz['procent2008']) + ';' +  \
