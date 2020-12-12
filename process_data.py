@@ -36,8 +36,8 @@ def get_orderstov_name(orderstov_code):
        """
       
     for orderstov in orderstovs:
-        if orderstov_code == orderstov[1]:
-            return orderstov[0]
+        if orderstov_code == orderstov[0]:
+            return orderstov[1]
 
     return "назва не знайдена"
 

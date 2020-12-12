@@ -68,7 +68,7 @@ def write_analiz(analiz_list):
     """
     with open('.\data\analiztab.txt', "w") as analiz_file:
         for analiz in analiz_list:
-                   line = analiz['namerunok'] + ';' +         \
+            line = analiz['namerunok'] + ';' +         \
                    analiz['nametovar'] + ';' +         \
                    analiz['kilogram'] + ';' +          \
                    str(analiz['price2007']) + ';' +    \
