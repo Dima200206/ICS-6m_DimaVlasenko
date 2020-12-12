@@ -66,7 +66,7 @@ print(FOOTER)
 def write_analiz(analiz_list):
     """ запис заявок в файл 
     """
-    with open('.\data\analiz.txt',encoding="utf8", "w") as analiz_file:
+    with open('.\data\analiz.txt', "w") as analiz_file:
         for analiz in analiz_list:
                    line = analiz['namerunok'] + ';' +         \
                    analiz['nametovar'] + ';' +         \
