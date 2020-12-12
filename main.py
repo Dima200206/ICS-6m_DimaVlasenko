@@ -50,7 +50,7 @@ def show_analiz_table(analiz_list):
     for analiz in analiz_list:
         print(f"{analiz['namerunok']:20}",
               f"{analiz['nametovar']:20}",
-              f"{analiz['kg']}",
+              f"{analiz['kilogram']}",
               f"{analiz['price2007']:>14}", # число вирівнюється по середині
               f"{analiz['price2008']:>15.2f}", # число флов дріб 
               f"{analiz['procent2008']:>15.2f}",
