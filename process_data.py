@@ -61,11 +61,11 @@ def create_analiz():
         analiz_work['kilogram'] = get_orderstov_name(midlprice[2])
         analiz_work['price2007'] = midlprice[1]
         analiz_work['price2008'] = midlprice[2]
-        analiz_work['procent2008'] = float(analiz_work['price2007'])*100 / float(analiz_work['price2008'])+ 100
+        analiz_work['procent2008'] = float(analiz_work['price2007'].strip())* int(100) / float(analiz_work['price2008'].strip())+ int(100)
         analiz_work['price2011'] = midlprice[3]
-        analiz_work['procent2011'] =  float(analiz_work['price2008'])*100 / float(analiz_work['price2011'])+ 100
+        analiz_work['procent2011'] =  float(analiz_work['price2008'].strip())* int(100) / float(analiz_work['price2011'].strip())+ int(100)
         analiz_work['price2017'] = midlprice[4]
-        analiz_work['procent2017'] =  float(analiz_work['price2011'])*100 / float(analiz_work['price2017'])+ 100
+        analiz_work['procent2017'] =  float(analiz_work['price2011'].strip())* int(100) / float(analiz_work['price2017'].strip())+ int(100)
 
         analiz_list.append(analiz_work)
 
