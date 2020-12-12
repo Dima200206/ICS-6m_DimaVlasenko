@@ -96,12 +96,12 @@ while True:
 
 
     elif comand_number == '1':
-        analiz_list = create_analiz()
+        analiz_list = create_analiz(analiz_list)
         show_analiz_table(analiz_list)
         input(STOP_MESSAGE)
 
     elif comand_number == '2':
-            analiz_list = create_analiz()
+            analiz_list = create_analiz(analiz_list)
             write_analiz(analiz_list)
             input(STOP_MESSAGE)
 
