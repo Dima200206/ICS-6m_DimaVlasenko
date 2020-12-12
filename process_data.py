@@ -25,21 +25,22 @@ def create_analiz():
     Returns:
     zajavka_list: список заявок
     """
-def get_orderstov_name(orderstov_code):
-    """знаходить назву клыента по коду
     
-    Args:
-       client_code ([Type]): код клыента
+    def get_orderstov_name(orderstov_code):
+    #"""знаходить назву клыента по коду
+    
+    #Args:
+       #client_code ([Type]): код клыента
        
-       Returns:
-       [type]: назва клыента
-       """
+       #Returns:
+       #[type]: назва клыента
+       #"""
       
-    for orderstov in orderstovs:
-        if orderstov[0] == orderstov_code:
-            return orderstov[1]
+       for orderstov in orderstovs:
+           if orderstov[0] == orderstov_code:
+              return orderstov[1]
 
-    return "назва не знайдена"
+       return "назва не знайдена"
 
 #def get_midlprices
 
@@ -60,11 +61,11 @@ def get_orderstov_name(orderstov_code):
         analiz_work['kilogram'] = get_orderstov_name(midlprice[2])
         analiz_work['price2007'] = midlprice[1]
         analiz_work['price2008'] = midlprice[2]
-        analiz_work['procent2008'] = float(analiz_work['price2007']) / float(analiz_work['price2008'])* 100
+        analiz_work['procent2008'] = float(analiz_work['price2007'])*100 / float(analiz_work['price2008'])+ 100
         analiz_work['price2011'] = midlprice[3]
-        analiz_work['procent2011'] =  float(analiz_work['price2008']) / float(analiz_work['price2011'])* 100
+        analiz_work['procent2011'] =  float(analiz_work['price2008'])*100 / float(analiz_work['price2011'])+ 100
         analiz_work['price2017'] = midlprice[4]
-        analiz_work['procent2017'] =  float(analiz_work['price2011']) / float(analiz_work['price2017'])* 100
+        analiz_work['procent2017'] =  float(analiz_work['price2011'])*100 / float(analiz_work['price2017'])+ 100
 
         analiz_list.append(analiz_work)
 

@@ -68,7 +68,7 @@ def show_orderstovs(orderstovs):
 
     for orderstov in orderstovs:
         if  orderstov_code_from <= orderstov[0] <= orderstov_code_to: 
-            print("код: {:4} назва: {:6} одиниця: {:6}".format(orderstov[0], orderstov[1], orderstov[2]))
+            print("код: {:4} назва: {:16} одиниця: {:16}".format(orderstov[0], orderstov[1], orderstov[2]))
             
                 
 #orderstovs = get_orderstovs()

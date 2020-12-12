@@ -61,7 +61,7 @@ def show_analiz_table(analiz_list):
     )              
     #"""do formating for correct printing 'f-string' """
 
-print(FOOTER)
+    print(FOOTER)
 
 def write_analiz(analiz_list):
     """ запис заявок в файл 
@@ -81,7 +81,7 @@ def write_analiz(analiz_list):
                    
         analiz_file.write(line)
 
-print("Файл успішно сформовано ...")
+    print("Файл успішно сформовано ...")
 
 while True:
 
@@ -96,12 +96,12 @@ while True:
 
 
     elif comand_number == '1':
-        analiz_list = create_analiz(analiz_list)
+        analiz_list = create_analiz()
         show_analiz_table(analiz_list)
         input(STOP_MESSAGE)
 
     elif comand_number == '2':
-            analiz_list = create_analiz(analiz_list)
+            analiz_list = create_analiz()
             write_analiz(analiz_list)
             input(STOP_MESSAGE)
 
